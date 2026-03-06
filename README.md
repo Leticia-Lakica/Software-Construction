@@ -113,3 +113,114 @@ introduced too much network latency and operational complexity. They instead mov
 > **modular monolith** and only extracting services when there is a clear,
 > proven need.
 
+## Other Companies Using Microservices
+
+
+### 1.  Google
+**How they use it:**
+Google runs some of the largest distributed systems in the world.
+- Services like Search, Maps, Gmail, and YouTube all operate as independent systems
+- They developed **Kubernetes** internally (originally called Borg) to manage containers
+  at scale — now the industry standard for microservices orchestration
+- Also created **gRPC**, a high-performance communication protocol widely used
+  between microservices
+
+---
+
+### 2. Uber
+**How they use it:**
+Uber transitioned from a monolith to microservices as they expanded globally.
+- Separate services for driver matching, pricing (surge), payments, notifications,
+  and trip management
+- At peak scale they ran **thousands of microservices**
+- Eventually faced challenges managing too many services and introduced
+  **domain-oriented microservices (DOMA)** to bring structure back
+
+
+### 3. Spotify
+**How they use it:**
+Spotify embraced microservices early and also pioneered a famous team structure to go with it.
+- Organized around **Squads, Tribes, Chapters, and Guilds** — a model many companies copied
+- Each squad owns its own microservice end-to-end
+- Services cover recommendations, playlist management, search, social features, and streaming
+- Built **Backstage**, an open-source developer portal for managing microservices,
+  now widely adopted in the industry
+
+
+### 4. PayPal
+**How they use it:**
+PayPal migrated from a monolith to microservices to handle growing transaction volumes.
+- Decomposed their payments platform into independent services
+- Improved deployment frequency and reduced time-to-market for new features
+- Uses Node.js heavily across their microservices layer
+
+
+### 5. eBay
+**How they use it:**
+eBay has been evolving its architecture since the early 2000s.
+- Moved from a Perl monolith → Java monolith → microservices over decades
+- Each product domain (search, checkout, listings, recommendations) is a separate service
+- Strong focus on **event-driven architecture** using Kafka for service communication
+
+
+### 6. Airbnb
+**How they use it:**
+Airbnb adopted microservices to scale their platform globally.
+- Split their monolith (nicknamed **"the Monorail"**) into services covering
+  bookings, payments, messaging, search, and reviews
+- Faced significant challenges with **data consistency** and **service sprawl**
+- Built internal tooling like **Chronos** (job scheduler) to manage complexity
+- Later moved toward a **service-oriented architecture with stronger domain boundaries**
+
+
+### 7. Twitter / X
+**How they use it:**
+Twitter decomposed their Ruby on Rails monolith (nicknamed **"the Fail Whale" era**) 
+into microservices after repeated outages.
+- Core services include timeline generation, tweet ingestion, search, notifications,
+  and direct messages
+- Built **Finagle**, an open-source RPC framework for inter-service communication
+- Timeline fanout (delivering a tweet to all followers) is a classic microservices
+  architecture case study
+
+
+### 8. Walmart
+**How they use it:**
+Walmart re-platformed their entire e-commerce infrastructure to microservices.
+- Handled **Black Friday traffic spikes** more reliably after the migration
+- Moved away from expensive proprietary systems to open-source microservices on the cloud
+- Reported significant cost savings and improved deployment speed after the transition
+
+
+### 9. Capital One
+**How they use it:**
+Capital One is one of the most prominent financial institutions to embrace microservices
+and cloud-native architecture.
+- Moved entirely off data centers onto AWS using microservices
+- Each banking domain (credit cards, accounts, fraud detection) operates independently
+- Strong investment in **DevSecOps** — security built into every microservice pipeline
+
+
+
+## Summary Table
+
+| Company | Industry | Key Contribution |
+|---|---|---|
+| Google | Tech | Kubernetes, gRPC |
+| Uber | Ride-sharing | DOMA framework for managing service sprawl |
+| Spotify | Music Streaming | Squad model, open-sourced Backstage |
+| PayPal | Fintech | Node.js-based microservices at scale |
+| eBay | E-Commerce | Event-driven architecture with Kafka |
+| Airbnb | Travel | Managed monolith-to-microservices migration |
+| Twitter/X | Social Media | Finagle RPC, timeline fanout case study |
+| Walmart | Retail | Black Friday scaling, cost reduction |
+| Capital One | Finance / Banking | Cloud-native banking, DevSecOps |
+
+
+> **Note:** Most of these companies did not have a smooth journey.
+> Each faced unique challenges around **data consistency, service sprawl,
+> latency, and operational complexity** — and invested heavily in
+> internal tooling to manage it. Microservices work best when
+> paired with a strong **DevOps culture, CI/CD pipelines,
+> and distributed tracing infrastructure**.
+
