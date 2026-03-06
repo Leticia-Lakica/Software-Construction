@@ -24,16 +24,16 @@ Managing hundreds of services introduces complexity around deployment, monitorin
 
 > Many of the tools Netflix built internally were eventually open-sourced and became the foundation for modern microservices patterns industry-wide.
 
-
+---
 
 ## Companies That Moved Away from Microservices Back to Monolith
 
 Several high-profile companies have publicly documented their decision to reverse course
 from microservices back to a monolithic (or "majestic monolith") architecture.
 
----
 
-### 1. 🛒 Amazon Prime Video (2023)
+
+### 1. Amazon Prime Video (2023)
 **Why they switched back:**
 Their audio/video monitoring service was built as microservices using AWS Step Functions
 and Lambda. The distributed architecture created two core problems:
@@ -44,9 +44,9 @@ and Lambda. The distributed architecture created two core problems:
 and improved scalability. Ironically, this came from the company that sells the cloud
 infrastructure most microservices run on.
 
----
 
-### 2. 🛠️ Segment (2020)
+
+### 2. Segment (2020)
 **Why they switched back:**
 Segment split their data pipeline into microservices, which eventually led to:
 - A tangled web of interdependencies between services
@@ -58,7 +58,7 @@ which was simpler to reason about, easier to debug, and performed better.
 
 ---
 
-### 3. 💬 Istio (Google)
+### 3. Istio (Google)
 **Why they switched back:**
 Istio's control plane was originally split into multiple microservices
 (Pilot, Citadel, Galley, Mixer). The complexity was a major pain point for users and operators:
@@ -71,7 +71,7 @@ into a **single monolithic binary** called `istiod`, dramatically simplifying op
 
 ---
 
-### 4. 🧑‍💻 Stack Overflow
+### 4. Stack Overflow
 **Why they didn't switch:**
 Stack Overflow has famously *resisted* microservices despite massive scale.
 They serve millions of requests daily from a relatively small number of servers
@@ -83,7 +83,7 @@ using a monolithic architecture, arguing that:
 
 ---
 
-### 5. 📦 Shopify
+### 5. Shopify
 **Why they refactored (modular monolith):**
 Rather than full microservices, Shopify found that their microservice experiments
 introduced too much network latency and operational complexity. They instead moved to a
@@ -91,7 +91,7 @@ introduced too much network latency and operational complexity. They instead mov
 
 **Outcome:** Better performance, simpler deployments, without sacrificing code organization.
 
----
+
 
 ## Key Lessons Learned
 
@@ -103,9 +103,9 @@ introduced too much network latency and operational complexity. They instead mov
 | **Team size mismatch** | Microservices shine with large, independent teams |
 | **Premature splitting** | Services split too early before domain boundaries are clear |
 
----
 
-## The Takeaway
+
+## Key Takeaway
 
 > Microservices are not inherently better than monoliths. The right architecture
 > depends on your **team size**, **scale**, **domain complexity**, and
@@ -113,6 +113,3 @@ introduced too much network latency and operational complexity. They instead mov
 > **modular monolith** and only extracting services when there is a clear,
 > proven need.
 
-**Further Reading:**
-- [Amazon Prime Video's microservices reversal (2023)](https://www.primevideotech.com/video-streaming/scaling-up-the-prime-video-audio-video-monitoring-service-and-reducing-costs-by-90)
-- [Martin Fowler on the Majestic Monolith](https://martinfowler.com/bliki/MonolithFirst.html)
